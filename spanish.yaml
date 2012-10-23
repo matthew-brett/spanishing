@@ -1,0 +1,268 @@
+grammar:
+    accents:
+        a: á
+        e: é
+        i: í
+        o: ó
+        u: ú
+    epersons:
+        I: yo
+        you-sfam: tu
+        you-sform: el
+        he: el
+        she: el
+        it: el
+        we: nosotros
+        you-pfam: ellos
+        you-pform: ellos
+        they: ellos
+    spersons:
+        yo : yo
+        tu : tu
+        el : el
+        ella : el
+        usted : el
+        nosotros : nosotros
+        ustedes : ellos
+        ellos : ellos
+        ellas : ellos
+    tenses:
+        - present
+        - future
+        - simple-past
+        - imperfect
+    v-reg-ar: &v-reg-ar
+        tenses: &v-reg-ar-tenses
+            present:
+                yo: -o
+                tu: -as
+                el: -a
+                nosotros: -amos
+                ellos: -an
+            future:
+                yo: -aré
+                tu: -arás
+                el: -ará
+                nosotros: -aremos
+                ellos: -arán
+            simple-past:
+                yo: -é
+                tu: -aste
+                el: -ó
+                nosotros: -amos
+                ellos: -eron
+            imperfect:
+                yo: -aba
+                tu: -abas
+                el: -aba
+                nosotros: -ábamos
+                ellos: -aban
+        pastpart: -ado
+        gerund: -ando
+
+    v-reg-er: &v-reg-er
+        tenses : &v-reg-er-tenses
+            present:
+                yo: -o
+                tu: -es
+                el: -e
+                nosotros: -emos
+                ellos: -en
+            future:
+                yo: -eré
+                tu: -erás
+                el: -erá
+                nosotros: -eremos
+                ellos: -erán
+            simple-past:
+                yo: -í
+                tu: -iste
+                el: -ió
+                nosotros: -imos
+                ellos: -ieron
+            imperfect:
+                yo: -ía
+                tu: -ías
+                el: -ía
+                nosotros: -íamos
+                ellos: -ían
+
+    v-reg-ir: &v-reg-ir
+        tenses: &v-reg-ir-tenses
+            present:
+                yo: -o
+                tu: -es
+                el: -e
+                nosotros: -imos
+                ellos: -en
+            future:
+                yo: -iré
+                tu: -irás
+                el: -irá
+                nosotros: -iremos
+                ellos: -irán
+            simple-past:
+                yo: -í
+                tu: -iste
+                el: -ió
+                nosotros: -imos
+                ellos: -ieron
+            imperfect:
+                yo: -ía
+                tu: -ías
+                el: -ía
+                nosotros: -íamos
+                ellos: ían
+
+trabajar:
+    part: v
+    type: itr
+    decl: *v-reg-ar
+    einf: work
+    epastp: worked
+    egerund: working
+
+bailar:
+    part: v
+    type: itr
+    decl: *v-reg-ar
+    einf: dance
+    epastp: danced
+    egerund: dancing
+
+saltar:
+    part: v
+    type: itr
+    decl: *v-reg-ar
+    einf: jump
+    epastp: jumped
+    egerund: jumping
+
+limpiar:
+    part: v
+    type: tr
+    decl: *v-reg-ar
+    einf: clean
+    epastp: cleaned
+    egerund: cleaning
+
+llamar:
+    part: v
+    type: tr
+    decl: *v-reg-ar
+    einf: call
+    epastp: called
+    egerund: calling
+
+estudiar:
+    part: v
+    type: tr
+    decl: *v-reg-ar
+    einf: study
+    epastp: studied
+    egerund: studying
+
+viajar:
+    part: v
+    type: itr
+    decl: *v-reg-ar
+    einf: travel
+    epastp: traveled
+    egerund: traveling
+
+comer:
+    part: v
+    type: tr
+    decl: *v-reg-er
+    einf: eat
+    epastp: ate
+    egerund: eating
+
+responder:
+    part: v
+    type: itr
+    decl: *v-reg-er
+    einf: respond
+    epastp: responded
+    egerund: responding
+
+leer:
+    part: v
+    type: tr
+    decl: *v-reg-er
+    einf: read
+    epastp: read (past)
+    egerund: reading
+
+ver:
+    part: v
+    type: tr
+    decl:
+        tenses :
+            present:
+                yo: veo
+                tu: ves
+                el: ve
+                nosotros: vemos
+                ellos: ven
+            future:
+                yo: veré
+                tu: verás
+                el: verá
+                nosotros: veremos
+                ellos: verán
+            simple-past:
+                yo: ví
+                tu: viste
+                el: vió
+                nosotros: vimos
+                ellos: vieron
+            imperfect:
+                yo: veía
+                tu: veías
+                el: veía
+                nosotros: veíamos
+                ellos: veían
+    einf: see
+    epastp: saw
+    egerund: seeing
+
+creer:
+    part: v
+    type: tr
+    decl: *v-reg-er
+    einf: believe
+    epastp: believed
+    egerund: believing
+
+vivir:
+    part: v
+    type: itr
+    decl: *v-reg-ir
+    einf: live
+    epastp: lived
+    egerund: living
+
+escribir:
+    part: v
+    type: tr
+    decl: *v-reg-ir
+    einf: write
+    epastp: wrote
+    egerund: writing
+
+dirigir:
+    part: v
+    type: tr
+    decl: *v-reg-ir
+    einf: manage
+    epastp: managed
+    egerund: managing
+
+permitir:
+    part: v
+    type: tr
+    decl: *v-reg-ir
+    einf: allow
+    epastp: allowed
+    egerund: allowing
