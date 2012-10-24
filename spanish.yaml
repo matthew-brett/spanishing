@@ -50,7 +50,7 @@ grammar:
                 tu: -aste
                 el: -ó
                 nosotros: -amos
-                ellos: -eron
+                ellos: -aron
             imperfect:
                 yo: -aba
                 tu: -abas
@@ -112,7 +112,7 @@ grammar:
                 tu: -ías
                 el: -ía
                 nosotros: -íamos
-                ellos: ían
+                ellos: -ían
 
 trabajar:
     part: v

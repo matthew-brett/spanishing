@@ -1,3 +1,4 @@
+from __future__ import print_function
 import os
 import random
 import codecs
@@ -33,6 +34,7 @@ def decline_verb(verb, tense, person):
     return declined
 
 
+print("? to see answer, q to quit")
 while True:
     sperson = random.choice(SPERSONS.keys())
     verb = random.choice(VERBS)
