@@ -11,6 +11,7 @@ ESP_DICT = list(yaml.load_all(stream))[0]
 
 VERBS = [key for key in ESP_DICT if 'part' in ESP_DICT[key]]
 SPERSONS = ESP_DICT['grammar']['spersons']
+SPERSONS_LIST = ESP_DICT['grammar']['spersons_list']
 EPERSONS = ESP_DICT['grammar']['epersons']
 ALL_PERSONS = SPERSONS.copy()
 ALL_PERSONS.update(EPERSONS)
@@ -25,13 +26,21 @@ def form_accents(in_str):
     return out_str
 
 
-def decline_verb(verb, tense, person):
-    sp_person = ALL_PERSONS[person]
+def decline_verb(verb, tense, persons=None):
+    if persons is None:
+        persons = SPERSONS_LIST
+    elif isinstance(persons, (str, unicode)):
+        persons = [persons]
     vdata = ESP_DICT[verb]
-    declined = vdata['decl']['tenses'][tense][sp_person]
-    if declined.startswith('-'):
-        declined = declined.replace('-', verb[:-2])
-    return declined
+    tense_data = vdata['decl']['tenses'][tense]
+    decs = []
+    for person in persons:
+        sp_person = ALL_PERSONS[person]
+        declined = tense_data[sp_person]
+        if declined.startswith('-'):
+            declined = declined.replace('-', verb[:-2])
+        decs.append(declined.format(vdata['decl']))
+    return decs
 
 
 print("? to see answer, q to quit")
@@ -40,26 +49,14 @@ while True:
     verb = random.choice(VERBS)
     tense = random.choice(TENSES)
     vdata = ESP_DICT[verb]
+    translation = vdata['translation']
     person_canonical = ALL_PERSONS[sperson]
-    if tense == 'present':
-        msg = "{0} {1}".format(sperson, vdata['einf'])
-        if person_canonical == 'el':
-            msg += 's'
-    elif tense == 'future':
-        msg = "{0} will {1}".format(sperson, vdata['einf'])
-    elif tense == 'simple-past':
-        msg = "{0} {1}".format(sperson, vdata['epastp'])
-    elif tense == 'imperfect':
-        if person_canonical in ('yo', 'el'):
-            mid = 'was'
-        else:
-            mid = 'were'
-        msg = "{0} {1} {2}".format(sperson, mid, vdata['egerund'])
+    msg = "{0} {1} {2}".format(sperson, translation, tense)
     result = raw_input(msg + ": ")
     if result in ('', 'q', 'quit', 'Q', 'exit'):
         break;
     result = form_accents(result)
-    correct = decline_verb(verb, tense, sperson)
+    correct, = decline_verb(verb, tense, sperson)
     if result == '?':
         print("I believe the right answer is " + correct)
         continue
@@ -68,4 +65,5 @@ while True:
         print("Congratulations, for what it is worth, I agree with you")
     else:
         print("One of us is wrong, because I think " + correct + " is correct")
+        print('\n'.join(decline_verb(verb, tense)))
 print("Thanks for your attention")

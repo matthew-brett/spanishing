@@ -26,6 +26,12 @@ grammar:
         ustedes : ellos
         ellos : ellos
         ellas : ellos
+    spersons_list:
+        - yo
+        - tu
+        - el
+        - nosotros
+        - ellos
     tenses:
         - present
         - future
@@ -118,6 +124,7 @@ trabajar:
     part: v
     type: itr
     decl: *v-reg-ar
+    translation: work
     einf: work
     epastp: worked
     egerund: working
@@ -126,6 +133,7 @@ bailar:
     part: v
     type: itr
     decl: *v-reg-ar
+    translation: dance
     einf: dance
     epastp: danced
     egerund: dancing
@@ -134,6 +142,7 @@ saltar:
     part: v
     type: itr
     decl: *v-reg-ar
+    translation: jump
     einf: jump
     epastp: jumped
     egerund: jumping
@@ -142,6 +151,7 @@ limpiar:
     part: v
     type: tr
     decl: *v-reg-ar
+    translation: clean
     einf: clean
     epastp: cleaned
     egerund: cleaning
@@ -150,6 +160,7 @@ llamar:
     part: v
     type: tr
     decl: *v-reg-ar
+    translation: call
     einf: call
     epastp: called
     egerund: calling
@@ -158,6 +169,7 @@ estudiar:
     part: v
     type: tr
     decl: *v-reg-ar
+    translation: study
     einf: study
     epastp: studied
     egerund: studying
@@ -166,6 +178,7 @@ viajar:
     part: v
     type: itr
     decl: *v-reg-ar
+    translation: travel
     einf: travel
     epastp: traveled
     egerund: traveling
@@ -174,6 +187,7 @@ comer:
     part: v
     type: tr
     decl: *v-reg-er
+    translation: eat
     einf: eat
     epastp: ate
     egerund: eating
@@ -182,6 +196,7 @@ responder:
     part: v
     type: itr
     decl: *v-reg-er
+    translation: respond
     einf: respond
     epastp: responded
     egerund: responding
@@ -190,6 +205,7 @@ leer:
     part: v
     type: tr
     decl: *v-reg-er
+    translation: read
     einf: read
     epastp: read (past)
     egerund: reading
@@ -223,6 +239,7 @@ ver:
                 el: veía
                 nosotros: veíamos
                 ellos: veían
+    translation: see
     einf: see
     epastp: saw
     egerund: seeing
@@ -231,6 +248,7 @@ creer:
     part: v
     type: tr
     decl: *v-reg-er
+    translation: believe
     einf: believe
     epastp: believed
     egerund: believing
@@ -239,6 +257,7 @@ vivir:
     part: v
     type: itr
     decl: *v-reg-ir
+    translation: live
     einf: live
     epastp: lived
     egerund: living
@@ -247,6 +266,7 @@ escribir:
     part: v
     type: tr
     decl: *v-reg-ir
+    translation: write
     einf: write
     epastp: wrote
     egerund: writing
@@ -255,6 +275,7 @@ dirigir:
     part: v
     type: tr
     decl: *v-reg-ir
+    translation: manage
     einf: manage
     epastp: managed
     egerund: managing
@@ -263,6 +284,177 @@ permitir:
     part: v
     type: tr
     decl: *v-reg-ir
+    translation: allow
     einf: allow
     epastp: allowed
     egerund: allowing
+
+ir:
+    part: v
+    type: itr
+    decl:
+        tenses :
+            present:
+                yo: voy
+                tu: vas
+                el: va
+                nosotros: vamos
+                ellos: van
+            future:
+                yo: iré
+                tu: irás
+                el: irá
+                nosotros: iremos
+                ellos: irán
+            simple-past:
+                yo: fui
+                tu: fuiste
+                el: fue
+                nosotros: fuimos
+                ellos: fuieron
+            imperfect:
+                yo: iba
+                tu: iban
+                el: iba
+                nosotros: íbamos
+                ellos: iban
+    translation: go
+    einf: go
+    epastp: went
+    egerund: going
+
+ser:
+    part: v
+    type: tr
+    decl:
+        tenses :
+            present:
+                yo: soy
+                tu: eres
+                el: es
+                nosotros: somos
+                ellos: son
+            future:
+                yo: seré
+                tu: serás
+                el: será
+                nosotros: seremos
+                ellos: serán
+            simple-past:
+                yo: fui
+                tu: fuiste
+                el: fue
+                nosotros: fuimos
+                ellos: fuieron
+            imperfect:
+                yo: era
+                tu: eras
+                el: era
+                nosotros: éramos
+                ellos: éran
+    translation: be (essence)
+    einf: be
+    epastp: was
+    egerund: being
+
+estar:
+    part: v
+    type: tr
+    decl:
+        tenses :
+            present:
+                yo: estoy
+                tu: estás
+                el: está
+                nosotros: estamos
+                ellos: están
+            future:
+                yo: estaré
+                tu: estarás
+                el: estará
+                nosotros: estaremos
+                ellos: estarán
+            simple-past:
+                yo: estuve
+                tu: estuviste
+                el: estuvo
+                nosotros: estuvimos
+                ellos: estuvieron
+            imperfect:
+                yo: estaba
+                tu: estaban
+                el: estaba
+                nosotros: estábamos
+                ellos: estaban
+    translation: be (state)
+    einf: be
+    epastp: was
+    egerund: being
+
+haber:
+    part: v
+    type: tr
+    decl:
+        tenses :
+            present:
+                yo: he
+                tu: has
+                el: ha
+                nosotros: hemos
+                ellos: han
+            future:
+                yo: habré
+                tu: habrás
+                el: habrá
+                nosotros: habremos
+                ellos: habrán
+            simple-past:
+                yo: hube
+                tu: hubiste
+                el: hubo
+                nosotros: hubimos
+                ellos: hubieron
+            imperfect:
+                yo: había
+                tu: habías
+                el: había
+                nosotros: habíamos
+                ellos: habían
+    translation: have (haber)
+    einf: have
+    epastp: had
+    egerund: having
+
+tener:
+    part: v
+    type: tr
+    decl:
+        tenses :
+            present:
+                yo: tengo
+                tu: tienes
+                el: tiene
+                nosotros: tenemos
+                ellos: tienen
+            future:
+                yo: tendré
+                tu: tendrás
+                el: tendrá
+                nosotros: tendremos
+                ellos: tendrán
+            simple-past:
+                yo: tuve
+                tu: tuviste
+                el: tuvo
+                nosotros: tuvimos
+                ellos: tuvieron
+            imperfect:
+                yo: tenía
+                tu: tenías
+                el: tenía
+                nosotros: teníamos
+                ellos: tenían
+    translation: have (hold)
+    einf: hold
+    epastp: held
+    egerund: holding
